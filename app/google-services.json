@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1084733847009",
+    "project_id": "androidbase-5e927",
+    "storage_bucket": "androidbase-5e927.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084733847009:android:8ecd4d69380f63bba30ea0",
+        "android_client_info": {
+          "package_name": "com.papirus.androidbase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084733847009-li4js5r12l7ert9cffjmh8m2v8iamf1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfofIxDjWg0fIB7z9XoDqB2i_a3A55p3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084733847009-li4js5r12l7ert9cffjmh8m2v8iamf1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
