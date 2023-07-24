@@ -1,21 +1,9 @@
 package com.papirus.androidbase.core.uicomponents.extensions
 
-import android.content.Context
 import android.os.SystemClock
 import android.view.View
-import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 
-object ViewExtension {
-    fun View.hideKeyboard() {
-        (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-            .hideSoftInputFromWindow(windowToken, 0)
-    }
-
-    fun View.showKeyboard() {
-        (context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
-            .showSoftInput(this, InputMethodManager.SHOW_IMPLICIT)
-    }
+object ViewExt {
 
     fun View.setOnDebouncedClickListener(action: () -> Unit) {
         val actionDebouncer = ActionDebouncer(action)
@@ -25,25 +13,6 @@ object ViewExtension {
             actionDebouncer.notifyAction()
         }
     }
-
-    fun View.setAlpha(isEnabled: Boolean = true) {
-        alpha = if (isEnabled) 1f else 0.5f
-    }
-
-    fun View.forEachChildView(closure: (View) -> Unit) {
-        closure(this)
-        val groupView = this as? ViewGroup ?: return
-        val size = groupView.childCount - 1
-        for (i in 0..size) {
-            groupView.getChildAt(i).forEachChildView(closure)
-        }
-    }
-
-    fun View.setEnabledWithAlpha(isEnabled: Boolean = true) {
-        setAlpha(isEnabled = isEnabled)
-        setEnabled(isEnabled)
-    }
-
 
     fun View.removeOnDebouncedClickListener() {
         setOnClickListener(null)

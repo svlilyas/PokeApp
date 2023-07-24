@@ -1,11 +1,10 @@
 package com.papirus.androidbase.core.uicomponents.extensions
 
 import android.content.Context
-import android.util.TypedValue
 import android.widget.Toast
 import androidx.annotation.StringRes
 
-object ContextExtension {
+object ContextExt {
     fun Context.toastMessage(message: String, duration: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(this, message, duration).show()
     }

@@ -4,15 +4,6 @@ import android.view.View
 
 object ViewExtension {
 
-    val View.visible: Boolean
-        get() = visibility == View.VISIBLE
-
-    val View.gone: Boolean
-        get() = visibility == View.GONE
-
-    val View.invisible: Boolean
-        get() = visibility == View.INVISIBLE
-
     fun View.visible(isVisible: Boolean = true) {
         visibility = if (isVisible) View.VISIBLE else View.GONE
     }

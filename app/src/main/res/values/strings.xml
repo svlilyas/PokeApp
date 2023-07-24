@@ -2,4 +2,10 @@
     <string name="app_name">PokeApp</string>
     <string name="no_data">There is no data</string>
     <string name="pokemon_list">Pokemon List</string>
+    <string name="evolves_from">Evolves From: \n %1s</string>
+    <string name="pokemon_detail">%1s Detail</string>
+    <string name="happiness_rate">Happiness Rate: \n %1s</string>
+    <string name="capture_rate">Capture Rate: \n %1s</string>
+    <string name="pokemon_color">Color: \n %1s</string>
+    <string name="pokemon_image_url_pattern">https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%1s.png</string>
 </resources>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewAction" />
+
+        <variable
+            name="vm"
+            type="com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,13 +16,155 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_200"
+            android:padding="10dp"
+            android:text="@{@string/pokemon_detail(vm.pokemonDetail.name)}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/pokemon_detail" />
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/sizeXXXX_medium"
+            android:layout_height="@dimen/sizeXXXX_medium"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/app_name"
+            android:onClick="@{() -> vm.popBack()}"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/ivPokemon"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="@dimen/size_0dp"
+            android:contentDescription="@string/app_name"
+            android:elevation="10dp"
+            android:imageSource="@{@string/pokemon_image_url_pattern(vm.pokemonDetail.id)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.33"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintVertical_bias="0"
+            tools:src="@drawable/ic_app_logo" />
+
+        <TextView
+            android:id="@+id/tvPokemonName"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/size_medium"
+            android:text="@{vm.pokemonDetail.name}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvHappinessRate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPokemon"
+            tools:text="Pokemon Name" />
+
+        <TextView
+            android:id="@+id/tvHappinessRate"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/size_medium"
+            android:text="@{@string/happiness_rate(vm.pokemonDetail.baseHappiness)}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvColor"
+            app:layout_constraintEnd_toStartOf="@+id/tvCaptureRate"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+            app:layout_constraintWidth_percent="0.5"
+            tools:text="@string/happiness_rate" />
+
+        <TextView
+            android:id="@+id/tvCaptureRate"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/size_medium"
+            android:text="@{@string/capture_rate(vm.pokemonDetail.captureRate)}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvEvolvesFrom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/tvHappinessRate"
+            app:layout_constraintTop_toBottomOf="@+id/tvPokemonName"
+            app:layout_constraintWidth_percent="0.5"
+            tools:text="@string/capture_rate" />
+
+        <TextView
+            android:id="@+id/tvColor"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/size_medium"
+            android:text="@{@string/pokemon_color(vm.pokemonDetail.color.name)}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvEvolvesFrom"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHappinessRate"
+            tools:text="@string/pokemon_color" />
+
+        <TextView
+            android:id="@+id/tvEvolvesFrom"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/size_medium"
+            android:text="@{@string/evolves_from(vm.pokemonDetail.evolvesFromSpecies.name)}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/tvColor"
+            app:layout_constraintTop_toBottomOf="@+id/tvCaptureRate"
+            app:layout_constraintWidth_percent="0.5"
+            tools:text="@string/evolves_from" />
+
+        <TextView
+            android:id="@+id/tvNoData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pokemon Detail Fragment"
+            android:text="@string/no_data"
+            android:textSize="24sp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="@dimen/size_progress_bar"
+            android:layout_height="@dimen/size_progress_bar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

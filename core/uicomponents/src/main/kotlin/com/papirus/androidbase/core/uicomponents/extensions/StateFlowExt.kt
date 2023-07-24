@@ -4,32 +4,9 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import timber.log.Timber
-
-@OptIn(ExperimentalCoroutinesApi::class)
-fun <T, K> StateFlow<T>.mapState(
-    scope: CoroutineScope,
-    transform: (data: T) -> K
-): StateFlow<K> {
-    return mapLatest {
-        transform(it)
-    }.stateIn(scope, SharingStarted.Eagerly, transform(value))
-}
-
-@OptIn(ExperimentalCoroutinesApi::class)
-fun <T, K> StateFlow<T>.mapState(
-    scope: CoroutineScope,
-    initialValue: K,
-    transform: suspend (data: T) -> K
-): StateFlow<K> {
-    return mapLatest {
-        transform(it)
-    }.stateIn(scope, SharingStarted.Eagerly, initialValue)
-}
 
 fun <T> Flow<T>.launchWhenStarted(lifecycleOwner: LifecycleOwner, flow: (T) -> Unit) =
     with(lifecycleOwner) {
@@ -80,10 +57,4 @@ fun <T> LifecycleOwner.observe(stateFlow: StateFlow<T>, flow: (T) -> Unit) {
     }
 }
 
-fun <T> LifecycleOwner.observe(flowData: Flow<T>, flow: (T) -> Unit) {
-    this.lifecycleScope.launchWhenStarted {
-        flowData.collectLatest {
-            it.let(flow)
-        }
-    }
-}
+

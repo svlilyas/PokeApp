@@ -89,6 +89,9 @@ dependencies {
 
     implementation(libs.stack.timber)
 
+    implementation(libs.stack.shimmer)
+    implementation(libs.androidx.swiperefresh)
+
     // hilt
     implementation(libs.stack.hilt.android)
     kapt(libs.stack.hilt.compiler)

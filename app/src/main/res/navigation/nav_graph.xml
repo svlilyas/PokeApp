@@ -10,5 +10,21 @@
         android:id="@+id/pokeListFragment"
         android:name="com.papirus.androidbase.ui.pokelist.presentation.PokeListFragment"
         android:label="PokeListFragment"
-        tools:layout="@layout/fragment_pokelist" />
+        tools:layout="@layout/fragment_pokelist">
+        <action
+            android:id="@+id/action_pokeListFragment_to_pokeDetailFragment"
+            app:destination="@id/pokeDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pokeDetailFragment"
+        android:name="com.papirus.androidbase.ui.pokedetail.presentation.PokeDetailFragment"
+        android:label="PokeDetailFragment"
+        tools:layout="@layout/fragment_pokemon_detail">
+        <argument android:name="pokemonId"
+            app:argType="integer" />
+    </fragment>
+
 </navigation>

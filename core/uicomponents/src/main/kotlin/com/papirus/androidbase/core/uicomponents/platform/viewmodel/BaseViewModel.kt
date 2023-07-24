@@ -2,14 +2,8 @@ package com.papirus.androidbase.core.uicomponents.platform.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.NavDirections
 import com.papirus.androidbase.core.uicomponents.BuildConfig
-
-import com.papirus.androidbase.core.uicomponents.extensions.Event
-import com.papirus.androidbase.core.uicomponents.platform.NavigationAction
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
@@ -28,12 +22,6 @@ abstract class BaseViewModel<ViewState : BaseViewState,
      */
     private val _uiStateFlow = MutableStateFlow(initialState)
     val uiStateFlow = _uiStateFlow.asStateFlow()
-
-    /**
-     * For triggering navigation actions
-     */
-    private val _navigation = MutableSharedFlow<Event<NavigationAction>>()
-    val navigation = _navigation.asSharedFlow()
 
     private var stateTimeTravelDebugger: StateTimeTravelDebugger? = null
 
@@ -62,28 +50,10 @@ abstract class BaseViewModel<ViewState : BaseViewState,
         }
     }
 
-    fun navigate(navDirections: NavDirections) {
-        viewModelScope.launch {
-            _navigation.emit(Event(NavigationAction.ToDirection(navDirections)))
-        }
-    }
-
-    fun navigateBack() {
-        viewModelScope.launch {
-            _navigation.emit(Event(NavigationAction.Back))
-        }
-    }
-
     fun sendAction(viewAction: ViewAction) {
         stateTimeTravelDebugger?.addAction(viewAction)
         state = onReduceState(viewAction)
     }
-
-    fun loadData() {
-        onLoadData()
-    }
-
-    protected open fun onLoadData() {}
 
     protected abstract fun onReduceState(viewAction: ViewAction): ViewState
 }

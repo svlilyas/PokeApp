@@ -5,7 +5,7 @@ core = "1.9.0"
 appcompat = "1.5.1"
 constraintlayout = "2.1.4"
 navigation = "2.5.3"
-room = "2.4.3"
+room = "2.5.2"
 androidxFragment = "1.5.1"
 databinding = "7.4.0"
 ktx = "1.+"
@@ -13,6 +13,7 @@ lifecycle = "2.+"
 recyclerview = "1.+"
 work-manager = "2.7.1"
 data-store = "1.0.0"
+paging = "3.1.1"
 
 profile-installer = "1.2.1"
 
@@ -24,6 +25,8 @@ agp = "7.4.2"
 kotlin = "1.8.0"
 material = "1.7.0"
 ksp = "1.8.0-1.0.8"
+
+shimmer = "0.5.0"
 
 dependencyAnalyze = "1.20.0"
 
@@ -61,6 +64,11 @@ androidx-navigation-ui = { module = "androidx.navigation:navigation-ui-ktx", ver
 androidx-navigation-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigation" }
 
 androidx-security-crypto = "androidx.security:security-crypto:1.0.0"
+androidx-swiperefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+# paging
+androidx-paging-common = { module = "androidx.paging:paging-common-ktx", version.ref = "paging" }
+androidx-paging-runtime = { module = "androidx.paging:paging-runtime-ktx", version.ref = "paging" }
 
 androidx-work-manager-runtime = { module = "androidx.work:work-runtime-ktx", version.ref = "work-manager" }
 androidx-data-store = { module = "androidx.datastore:datastore-preferences", version.ref = "data-store" }
@@ -88,10 +96,13 @@ androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core",
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
 
 # stack
 stack-kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 stack-agp = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+
+stack-shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 
 stack-ksp = { module = "com.google.devtools.ksp:symbol-processing", version.ref = "ksp" }
 

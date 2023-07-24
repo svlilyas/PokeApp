@@ -31,7 +31,12 @@ dependencies {
 
     // room
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.paging)
     ksp(libs.androidx.room.compiler)
+
+    //paging
+    api(libs.androidx.paging.common)
+    api(libs.androidx.paging.runtime)
 
     // hilt
     implementation(libs.stack.hilt.android)

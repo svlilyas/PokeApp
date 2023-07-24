@@ -1,7 +1,7 @@
 package com.papirus.androidbase.core.network.di
 
 import com.papirus.androidbase.core.network.BuildConfig
-import com.papirus.androidbase.core.network.service.MainService
+import com.papirus.androidbase.core.network.service.PokeService
 import com.papirus.androidbase.core.network.utils.DEFAULT_CALL_TIMEOUT_MILLIS
 import com.papirus.androidbase.core.network.utils.DEFAULT_CONNECT_TIMEOUT_MILLIS
 import com.papirus.androidbase.core.network.utils.DEFAULT_READ_TIMEOUT_MILLIS
@@ -51,8 +51,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMainService(retrofit: Retrofit): MainService =
-        retrofit.create(MainService::class.java)
+    fun provideMainService(retrofit: Retrofit): PokeService =
+        retrofit.create(PokeService::class.java)
 
     @Provides
     @Singleton

@@ -12,4 +12,6 @@
     <dimen name="sizeXX_medium">20dp</dimen>
     <dimen name="sizeXXX_medium">24dp</dimen>
     <dimen name="sizeXXXX_medium">28dp</dimen>
+
+    <dimen name="size_progress_bar">40dp</dimen>
 </resources>

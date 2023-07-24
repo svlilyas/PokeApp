@@ -1,8 +1,8 @@
 package com.papirus.androidbase.core.data.di
 
-import com.papirus.androidbase.core.data.client.MainClient
-import com.papirus.androidbase.core.data.repository.MainRepository
-import com.papirus.androidbase.core.database.db.AppDao
+import com.papirus.androidbase.core.data.client.PokeClient
+import com.papirus.androidbase.core.data.repository.PokeRepository
+import com.papirus.androidbase.core.database.db.PokeDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,10 +16,10 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideMainRepository(
-        mainClient: MainClient,
-        appDao: AppDao,
+    fun providePokeRepository(
+        pokeClient: PokeClient,
+        pokeDao: PokeDao,
         ioDispatcher: CoroutineDispatcher
-    ): MainRepository =
-        MainRepository(mainClient = mainClient, appDb = appDao, ioDispatcher = ioDispatcher)
+    ): PokeRepository =
+        PokeRepository(pokeClient = pokeClient, pokeDao = pokeDao, ioDispatcher = ioDispatcher)
 }

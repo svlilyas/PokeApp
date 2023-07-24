@@ -33,6 +33,10 @@ dependencies {
     // network
     implementation(libs.stack.sandwich)
 
+    // room
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
     // hilt
     implementation(libs.stack.hilt.android)
     kapt(libs.stack.hilt.compiler)

@@ -3,7 +3,7 @@ package com.papirus.androidbase.core.uicomponents.extensions
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
-import com.papirus.androidbase.core.uicomponents.extensions.ContextExtension.toastMessage
+import com.papirus.androidbase.core.uicomponents.extensions.ContextExt.toastMessage
 
 object FragmentExtension {
     fun Fragment.toastMessage(message: String, duration: Int = Toast.LENGTH_SHORT) =
