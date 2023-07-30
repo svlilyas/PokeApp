@@ -9,6 +9,7 @@ import com.papirus.androidbase.core.data.client.PokeClient
 import com.papirus.androidbase.core.database.db.PokeDatabase
 import com.papirus.androidbase.core.model.mapper.PokemonSpecieMapper.toEntity
 import com.papirus.androidbase.core.model.remote.response.PokemonSpecieResponse
+import com.papirus.androidbase.core.model.utils.AppConstants.Companion.IS_NETWORK_FETCH
 import com.papirus.androidbase.core.model.utils.AppConstants.Companion.POKE_PAGE_SIZE
 import retrofit2.HttpException
 import java.io.IOException
@@ -18,8 +19,7 @@ import javax.inject.Inject
 class PokeRemoteMediator @Inject constructor(
     private val pokeClient: PokeClient,
     private val pokeDatabase: PokeDatabase
-) :
-    RemoteMediator<Int, PokemonSpecieResponse.PokemonSpecie>() {
+) : RemoteMediator<Int, PokemonSpecieResponse.PokemonSpecie>() {
     override suspend fun load(
         loadType: LoadType,
         state: PagingState<Int, PokemonSpecieResponse.PokemonSpecie>
@@ -55,7 +55,7 @@ class PokeRemoteMediator @Inject constructor(
             }
 
             MediatorResult.Success(
-                endOfPaginationReached = pokemonSpecies.isEmpty()
+                endOfPaginationReached = pokemonSpecies.isEmpty() || !IS_NETWORK_FETCH
             )
         } catch (e: HttpException) {
             MediatorResult.Error(e)

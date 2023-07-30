@@ -13,7 +13,7 @@ interface PokeService {
 
         object PokemonSpecie {
             const val pokemonList = "$mainPath/pokemon-species"
-            const val pokemonDetail = "$mainPath/pokemon-species/{pokemonId}/"
+            const val pokemonDetail = "$mainPath/pokemon-species/{pokemonId}"
         }
     }
 

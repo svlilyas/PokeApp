@@ -1,16 +1,19 @@
 package com.papirus.androidbase.core.network.di
 
+import android.content.Context
 import com.papirus.androidbase.core.network.BuildConfig
 import com.papirus.androidbase.core.network.service.PokeService
 import com.papirus.androidbase.core.network.utils.DEFAULT_CALL_TIMEOUT_MILLIS
 import com.papirus.androidbase.core.network.utils.DEFAULT_CONNECT_TIMEOUT_MILLIS
 import com.papirus.androidbase.core.network.utils.DEFAULT_READ_TIMEOUT_MILLIS
 import com.papirus.androidbase.core.network.utils.DEFAULT_WRITE_TIMEOUT_MILLIS
+import com.papirus.androidbase.core.network.utils.NetworkConnectivityObserver
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,6 +25,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+    @Provides
+    @Singleton
+    fun provideConnectivityObserver(@ApplicationContext context: Context) =
+        NetworkConnectivityObserver(context)
 
     @Provides
     @Singleton

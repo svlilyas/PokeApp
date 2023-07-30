@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="red">#FF5757</color>
+    <color name="colorPrimary">#fff7f3</color>
+    <color name="colorPrimaryDark">#262460</color>
+    <color name="colorAccent">#242F76</color>
+
+    <color name="colorVeryLightPink">#fff7f3</color>
+    <color name="grayishBrown">#3b3b3b</color>
+    <color name="colorGraySeparator">#c8c8c8</color>
+    <color name="orange">#e7660e</color>
+    <color name="purplishBrown">#3f3c3d</color>
+    <color name="purpleBrown">#231f20</color>
+    <color name="darkGray">#9a9a9a</color>
+    <color name="emerald">#009d61</color>
+    <color name="black">#000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="color_light_blue">#83c5ea</color>
+    <color name="color_heliotrope">#e252f7</color>
+    <color name="color_cyan">#05f6fd</color>
+    <color name="color_rose_pink">#f57db3</color>
+    <color name="color_maize">#f2be5a</color>
+    <color name="color_cobalt">#1B2976</color>
+    <color name="color_cobalt_ninety_percent">#E61B2976</color>
+    <color name="color_primary_progress">#262561</color>
+
+    <color name="color_ui_base_gradient_top">#262460</color>
+    <color name="color_ui_base_gradient_bottom">#1F449E</color>
+    <color name="color_dark">#1c2b46</color>
+
+    <color name="color_read_book">#4ceded</color>
+    <color name="color_listened_book">#f59fc6</color>
+    <color name="color_total_point">#f7e270</color>
+    <color name="color_completed_assignments">#ab90f4</color>
+    <color name="transparent">#00000000</color>
 </resources>

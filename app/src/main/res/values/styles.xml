@@ -1,0 +1,227 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorOnSurfaceVariant">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="Widget.BottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <item name="android:textSize">12sp</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/purplishBrown</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet_dialog</item>
+    </style>
+
+    <style name="AppTheme.Splash">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="AppTheme.NoTitlePrimary">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="ProgressBarStyle" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/color_cobalt</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <style name="TransparentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+
+    <!--Andes Rounded Medium-->
+    <style name="andesMediumGrayish40" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">40sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_medium</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <style name="andesMediumPurplish22" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="lineHeight">28dp</item>
+        <item name="font">@font/andes_rounded_medium</item>
+        <item name="android:textColor">@color/purplishBrown</item>
+    </style>
+
+    <style name="andesMediumPurple20" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="lineHeight">30dp</item>
+        <item name="font">@font/andes_rounded_medium</item>
+        <item name="android:textColor">@color/purpleBrown</item>
+    </style>
+
+    <style name="andesMediumPurple18" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_medium</item>
+        <item name="android:textColor">@color/purpleBrown</item>
+    </style>
+
+    <style name="andesMediumWhite12" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_medium</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="andesMediumGrayish12" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_medium</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <!--Andes Rounded Regular-->
+    <style name="andesRegularGrayish25" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <style name="andesRegularPurplish18" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="lineHeight">25dp</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/purplishBrown</item>
+    </style>
+
+    <style name="andesRegularPurplish12" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/purplishBrown</item>
+    </style>
+
+    <style name="andesRegularPurple18" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/purpleBrown</item>
+    </style>
+
+    <style name="andesRegularDarkGrey16" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/darkGray</item>
+    </style>
+
+    <style name="andesRegularWhite16" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="andesRegularGrayish16" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="lineHeight">22dp</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <style name="andesRegularGrayish12" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/andes_rounded_regular</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <!--Brown Regular-->
+    <style name="brownRegularGrayish25" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/brown_regular</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <style name="brownRegularGrayish22" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">22sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/brown_regular</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <style name="brownRegularPurple20" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/brown_regular</item>
+        <item name="android:textColor">@color/purpleBrown</item>
+    </style>
+
+    <style name="brownRegularEmerald18" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">-0.41</item>
+        <item name="font">@font/brown_regular</item>
+        <item name="android:textColor">@color/emerald</item>
+    </style>
+
+    <style name="brownRegularWhite18" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/brown_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="brownRegularBlack16" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="font">@font/brown_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Hurme Regular-->
+    <style name="hurmeRegularGrayish16" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="font">@font/hurme_regular</item>
+        <item name="android:textColor">@color/grayishBrown</item>
+    </style>
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+</resources>

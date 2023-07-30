@@ -8,7 +8,6 @@ import timber.log.Timber
  * StreamChatInitializer initializes all Stream Client components.
  */
 class AppComponentInitializer : Initializer<Unit> {
-
     override fun create(context: Context) {
         Timber.d("AppComponentInitializer is initialized")
     }

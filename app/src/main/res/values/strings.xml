@@ -8,4 +8,7 @@
     <string name="capture_rate">Capture Rate: \n %1s</string>
     <string name="pokemon_color">Color: \n %1s</string>
     <string name="pokemon_image_url_pattern">https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%1s.png</string>
+    <string name="offline_mode">Offline Mode</string>
+    <string name="online_mode">Online Mode</string>
+    <string name="pokemon_name">Pokemon Name</string>
 </resources>

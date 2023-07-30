@@ -27,7 +27,8 @@ object PagingModule {
         config = PagingConfig(
             pageSize = POKE_PAGE_SIZE,
             prefetchDistance = 5,
-            initialLoadSize = POKE_PAGE_SIZE
+            initialLoadSize = POKE_PAGE_SIZE,
+            enablePlaceholders = true
         ),
         remoteMediator = PokeRemoteMediator(
             pokeClient = pokeClient, pokeDatabase = pokeDatabase

@@ -4,7 +4,6 @@ import android.os.SystemClock
 import android.view.View
 
 object ViewExt {
-
     fun View.setOnDebouncedClickListener(action: () -> Unit) {
         val actionDebouncer = ActionDebouncer(action)
 
@@ -20,7 +19,6 @@ object ViewExt {
     }
 
     private class ActionDebouncer(private val action: () -> Unit) {
-
         companion object {
             const val DEBOUNCE_INTERVAL_MILLISECONDS = 600L
         }

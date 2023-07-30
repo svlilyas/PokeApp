@@ -20,11 +20,9 @@ android {
 
     buildTypes {
         debug {
-            // BuildConfigField
             stringField(Fields.SERVICE_URL to "https://pokeapi.co/")
         }
         release {
-            // BuildConfigField
             stringField(Fields.SERVICE_URL to "https://pokeapi.co/")
         }
     }

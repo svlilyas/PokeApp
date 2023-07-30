@@ -23,7 +23,6 @@ object ImageViewExt {
             placeholder(placeholder ?: R.drawable.ic_image_placeholder)
             error(errorDrawable ?: R.drawable.ic_image_error)
             networkCachePolicy(CachePolicy.ENABLED)
-            memoryCachePolicy(CachePolicy.ENABLED)
             diskCachePolicy(CachePolicy.ENABLED)
             crossfade(true)
         }

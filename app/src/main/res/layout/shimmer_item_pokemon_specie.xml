@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <variable
-            name="vm"
-            type="com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewModel" />
-    </data>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -33,9 +25,8 @@
                 android:id="@+id/ivPokemon"
                 android:layout_width="@dimen/size_0dp"
                 android:layout_height="@dimen/size_0dp"
+                android:background="@drawable/bg_shimmer_rounded"
                 android:contentDescription="@string/app_name"
-                android:imageSource="@{@string/pokemon_image_url_pattern(vm.pokemonDetail.id)}"
-                android:src="@drawable/ic_app_logo"
                 app:layout_constraintBottom_toTopOf="@+id/guidelineCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -46,6 +37,7 @@
                 android:layout_width="@dimen/size_0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/bg_shimmer_rounded"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textSize="25sp"
@@ -53,8 +45,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guidelineCenter"
-                tools:text="Baldasar" />
+                app:layout_constraintTop_toTopOf="@+id/guidelineCenter" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

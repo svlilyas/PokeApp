@@ -9,7 +9,6 @@ class AppConstants {
          * STRINGS
          */
         const val STRING_EMPTY: String = ""
-        const val DEFAULT_RATE: String = "0"
 
         const val POKE_PAGE_SIZE = 20
 

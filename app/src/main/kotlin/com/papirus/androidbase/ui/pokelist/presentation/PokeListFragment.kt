@@ -2,15 +2,17 @@ package com.papirus.androidbase.ui.pokelist.presentation
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.widget.SearchView.OnQueryTextListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.papirus.androidbase.R
 import com.papirus.androidbase.core.model.local.UiState
 import com.papirus.androidbase.core.uicomponents.binding.BindingFragment
+import com.papirus.androidbase.core.uicomponents.binding.ViewExtension.invisible
 import com.papirus.androidbase.core.uicomponents.binding.ViewExtension.visible
 import com.papirus.androidbase.core.uicomponents.extensions.FlowExt.flowWithLifecycle
-import com.papirus.androidbase.core.uicomponents.extensions.FragmentExtension.toastMessage
+import com.papirus.androidbase.core.uicomponents.extensions.FragmentExt.toastMessage
 import com.papirus.androidbase.databinding.FragmentPokelistBinding
 import com.papirus.androidbase.ui.pokelist.domain.PokemonListViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +34,9 @@ class PokeListFragment : BindingFragment<FragmentPokelistBinding>(R.layout.fragm
     }
 
     private fun initUI() {
-        with(binding) {
+        binding {
+            vm = viewModel
+            lifecycleOwner = viewLifecycleOwner
             pokemonAdapter = PokemonAdapter()
             rvPokemonList.adapter = pokemonAdapter
 
@@ -47,7 +51,28 @@ class PokeListFragment : BindingFragment<FragmentPokelistBinding>(R.layout.fragm
                     )
                 )
             }
+
+            setOnSearchQueryChange()
         }
+    }
+
+    private fun setOnSearchQueryChange() {
+        binding.svPokemon.setOnQueryTextListener(object : OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                query?.let {
+                    viewModel.filterPages(query = it)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText?.let {
+                    viewModel.filterPages(query = it)
+                }
+                return true
+            }
+
+        })
     }
 
     /**
@@ -68,14 +93,36 @@ class PokeListFragment : BindingFragment<FragmentPokelistBinding>(R.layout.fragm
 
         flowWithLifecycle(flowData = viewModel.pokemonPagingFlow) {
             pokemonAdapter?.submitData(it)
+
+            binding.swPokemonList.isRefreshing = false
         }
 
         flowWithLifecycle(flowData = pokemonAdapter?.loadStateFlow) {
             val state = it.refresh
 
             withContext(Dispatchers.Main) {
-                binding.progressBar.visible(isVisible = state is LoadState.Loading)
+                if (state is LoadState.Loading) {
+                    showShimmerLoading()
+                } else {
+                    hideShimmerLoading()
+                }
             }
+        }
+    }
+
+    private fun showShimmerLoading() {
+        binding {
+            shimmerLayout.visible()
+            shimmerLayout.startShimmer()
+            swPokemonList.invisible()
+        }
+    }
+
+    private fun hideShimmerLoading() {
+        binding {
+            shimmerLayout.invisible()
+            shimmerLayout.stopShimmer()
+            swPokemonList.visible()
         }
     }
 

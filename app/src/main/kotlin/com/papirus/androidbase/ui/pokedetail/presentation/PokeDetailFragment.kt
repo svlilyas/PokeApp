@@ -10,7 +10,7 @@ import com.papirus.androidbase.core.model.local.UiState
 import com.papirus.androidbase.core.uicomponents.binding.BindingFragment
 import com.papirus.androidbase.core.uicomponents.binding.ViewExtension.visible
 import com.papirus.androidbase.core.uicomponents.extensions.FlowExt.flowWithLifecycle
-import com.papirus.androidbase.core.uicomponents.extensions.FragmentExtension.toastMessage
+import com.papirus.androidbase.core.uicomponents.extensions.FragmentExt.toastMessage
 import com.papirus.androidbase.databinding.FragmentPokemonDetailBinding
 import com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewModel
 import dagger.hilt.android.AndroidEntryPoint

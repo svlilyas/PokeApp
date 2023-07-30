@@ -21,5 +21,5 @@ object RepositoryModule {
         pokeDao: PokeDao,
         ioDispatcher: CoroutineDispatcher
     ): PokeRepository =
-        PokeRepository(pokeClient = pokeClient, pokeDao = pokeDao, ioDispatcher = ioDispatcher)
+        PokeRepository(pokeClient = pokeClient, ioDispatcher = ioDispatcher)
 }

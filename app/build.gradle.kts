@@ -32,6 +32,15 @@ android {
         testInstrumentationRunner = AndroidConfig.testInstrumentationRunner
     }
 
+    signingConfigs {
+        create("testRelease") {
+            storeFile = file("../../kale-global-keystore.jks")
+            storePassword = "KaleGlobal"
+            keyAlias = "key0"
+            keyPassword = "KaleGlobal"
+        }
+    }
+
     buildTypes {
         debug {}
         release {
@@ -39,6 +48,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("testRelease")
         }
     }
 

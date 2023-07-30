@@ -11,7 +11,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,9 +19,9 @@ import javax.inject.Inject
 class PokemonDetailViewModel @Inject constructor(
     private val pokeRepository: PokeRepository
 ) : BaseViewModel<PokemonDetailViewState, PokemonDetailViewAction>(PokemonDetailViewState()) {
-    val _pokemonDetail = MutableStateFlow<PokemonDetailResponse?>(null)
+    private val _pokemonDetail = MutableStateFlow<PokemonDetailResponse?>(null)
     val pokemonDetail: StateFlow<PokemonDetailResponse?>
-        get() = _pokemonDetail.asStateFlow()
+        get() = _pokemonDetail
 
     fun fetchPokemonDetail(pokemonId: Int) = viewModelScope.launch(Dispatchers.IO) {
         sendAction(viewAction = PokemonDetailViewAction.OnLoading)
@@ -51,9 +50,7 @@ class PokemonDetailViewModel @Inject constructor(
             )
 
             PokemonDetailViewAction.PopBack -> state.copy(
-                uiState = UiState.SUCCESS,
-                errorMessage = String.empty,
-                shouldPopBack = true
+                uiState = UiState.SUCCESS, errorMessage = String.empty, shouldPopBack = true
             )
         }
 }

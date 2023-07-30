@@ -16,7 +16,6 @@ import kotlin.properties.Delegates
 abstract class BaseViewModel<ViewState : BaseViewState,
         ViewAction : BaseAction>(initialState: ViewState) :
     ViewModel() {
-
     /**
      * For storing ViewState
      */
@@ -37,7 +36,6 @@ abstract class BaseViewModel<ViewState : BaseViewState,
      * will not be dispatched multiple times to LiveData stream)
      */
     protected var state by Delegates.observable(initialState) { _, old, new ->
-
         viewModelScope.launch {
             _uiStateFlow.emit(new)
         }
