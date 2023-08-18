@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.papirus.androidbase.core.uicomponents"
+    namespace = "com.mobinest.pokeapp.core.uicomponents"
     compileSdk = AndroidConfig.compileSdk
 
     defaultConfig {

@@ -17,7 +17,7 @@ android {
         minSdk = AndroidConfig.minSdk
     }
 
-    namespace = "com.papirus.androidbase.core.database"
+    namespace = "com.mobinest.pokeapp.core.database"
 }
 
 dependencies {

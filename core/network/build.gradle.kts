@@ -27,7 +27,7 @@ android {
         }
     }
 
-    namespace = "com.papirus.androidbase.core.network"
+    namespace = "com.mobinest.pokeapp.core.network"
 }
 
 dependencies {

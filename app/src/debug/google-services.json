@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1084733847009:android:8ecd4d69380f63bba30ea0",
         "android_client_info": {
-          "package_name": "com.papirus.androidbase"
+          "package_name": "com.mobinest.pokeapp"
         }
       },
       "oauth_client": [
@@ -38,7 +38,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1084733847009:android:175da37131804d3ba30ea0",
         "android_client_info": {
-          "package_name": "com.papirus.androidbase.debug"
+          "package_name": "com.mobinest.pokeapp.debug"
         }
       },
       "oauth_client": [

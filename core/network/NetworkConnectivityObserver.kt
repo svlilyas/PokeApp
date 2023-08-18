@@ -1,4 +1,4 @@
-package com.papirus.androidbase.platform
+package com.mobinest.pokeapp.platform
 
 import android.content.Context
 import android.net.ConnectivityManager

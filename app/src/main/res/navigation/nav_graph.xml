@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/pokeListFragment"
-        android:name="com.papirus.androidbase.ui.pokelist.presentation.PokeListFragment"
+        android:name="com.mobinest.pokeapp.ui.pokelist.presentation.PokeListFragment"
         android:label="PokeListFragment"
         tools:layout="@layout/fragment_pokelist">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/pokeDetailFragment"
-        android:name="com.papirus.androidbase.ui.pokedetail.presentation.PokeDetailFragment"
+        android:name="com.mobinest.pokeapp.ui.pokedetail.presentation.PokeDetailFragment"
         android:label="PokeDetailFragment"
         tools:layout="@layout/fragment_pokemon_detail">
         <argument android:name="pokemonId"

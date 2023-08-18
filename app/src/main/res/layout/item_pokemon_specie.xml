@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewModel" />
+            type="com.mobinest.pokeapp.ui.pokedetail.domain.PokemonDetailViewModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

@@ -39,7 +39,7 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="com.papirus.androidbase.initializer.AppComponentInitializer"
+                android:name="com.mobinest.pokeapp.initializer.AppComponentInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>

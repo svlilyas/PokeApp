@@ -1,4 +1,4 @@
-package com.papirus.androidbase.platform
+package com.mobinest.pokeapp.platform
 
 import kotlinx.coroutines.flow.Flow
 

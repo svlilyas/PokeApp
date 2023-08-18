@@ -3,11 +3,11 @@
 
     <data>
 
-        <import type="com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewAction" />
+        <import type="com.mobinest.pokeapp.ui.pokedetail.domain.PokemonDetailViewAction" />
 
         <variable
             name="vm"
-            type="com.papirus.androidbase.ui.pokedetail.domain.PokemonDetailViewModel" />
+            type="com.mobinest.pokeapp.ui.pokedetail.domain.PokemonDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

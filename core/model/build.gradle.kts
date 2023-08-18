@@ -19,7 +19,7 @@ android {
         }
     }
 
-    namespace = "com.papirus.androidbase.core.model"
+    namespace = "com.mobinest.pokeapp.core.model"
 }
 
 dependencies {
